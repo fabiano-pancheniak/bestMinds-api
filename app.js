@@ -7,7 +7,7 @@ const app = express()
 const port = 3000
 
 app.use(express.json())
-app.use("/", (req,req) => "Conectado com sucesso")
+app.use("/", (req,res) => "Conectado com sucesso")
 app.use("/api/products", productsRouter)
 
 const start = async (req, res) => {
