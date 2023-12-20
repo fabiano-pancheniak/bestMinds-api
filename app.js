@@ -12,7 +12,7 @@ app.use("/api/products", productsRouter)
 
 const start = async (req, res) => {
     try {
-        await mongoose.connect(process.env.CONN)
+        await mongoose.connect('mongodb+srv://fabiano:1234@cluster0.8p74an4.mongodb.net/BestMinds2024?retryWrites=true&w=majority')
         app.listen(port, () => {
             console.log(`server running at port ${port}`)
         })
