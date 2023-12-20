@@ -7,12 +7,11 @@ const app = express()
 const port = 3000
 
 app.use(express.json())
-app.use("/", (req,res) => "Conectado com sucesso")
 app.use("/api/products", productsRouter)
 
 const start = async (req, res) => {
     try {
-        await mongoose.connect('mongodb+srv://fabiano:1234@cluster0.8p74an4.mongodb.net/BestMinds2024?retryWrites=true&w=majority')
+        await mongoose.connect(process.env.CONN)
         app.listen(port, () => {
             console.log(`server running at port ${port}`)
         })
